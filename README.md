@@ -32,4 +32,4 @@ The wallet will always store an EOA account and a one time key. Everytime before
 
 ## Quantum Schema For Bitcoin
 
-For Bitcoin, the existing wallet intfrastruction would work, simply always use `P2PKH` addresses and always send all the remaining UTXO to a new address.
+For Bitcoin, the existing wallet intfrastruction would work, simply always use `P2PKH` addresses and always send all the remaining UTXO to a new address every time making a transaction.
