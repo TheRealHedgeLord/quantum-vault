@@ -21,7 +21,9 @@ contract Vault {
         address to,
         uint256 amount,
         bytes memory oneTimeKey,
-        bytes32 newHash
+        bytes32 newHash,
+        address nextSigner,
+        uint256 nextSignerFunding
     ) public {
         _verifyAndUpdate(oneTimeKey, newHash);
         if (token == address(0)) {
@@ -29,6 +31,7 @@ contract Vault {
         } else {
             _transferTokens(token, to, amount);
         }
+        _transferETH(nextSigner, nextSignerFunding);
     }
 
     function _verifyAndUpdate(
