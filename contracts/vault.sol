@@ -31,7 +31,9 @@ contract Vault {
         } else {
             _transferTokens(token, to, amount);
         }
-        _transferETH(nextSigner, nextSignerFunding);
+        if (nextSigner != address(0) && nextSignerFunding > 0) {
+            _transferETH(nextSigner, nextSignerFunding);
+        }
     }
 
     function _verifyAndUpdate(
