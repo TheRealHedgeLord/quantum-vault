@@ -1,5 +1,7 @@
 # Quantum Vault
 
+> Disclaimer: The author is pretty amateur, please do your own research and implement at your own risk.
+
 ## Overview
 
 This repository propose a simple schema to secure your asset on Ethereum against quantum computers.
