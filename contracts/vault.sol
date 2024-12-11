@@ -16,7 +16,7 @@ contract Vault {
         return _oneTimeHash;
     }
 
-    function withdraw(
+    function transfer(
         address token,
         address to,
         uint256 amount,
@@ -25,9 +25,9 @@ contract Vault {
     ) public {
         _verifyAndUpdate(oneTimeKey, newHash);
         if (token == address(0)) {
-            _withdrawETH(to, amount);
+            _transferETH(to, amount);
         } else {
-            _withdrawTokens(token, to, amount);
+            _transferTokens(token, to, amount);
         }
     }
 
@@ -41,11 +41,11 @@ contract Vault {
         _oneTimeHash = newHash;
     }
 
-    function _withdrawETH(address to, uint256 amount) private {
+    function _transferETH(address to, uint256 amount) private {
         payable(to).transfer(amount);
     }
 
-    function _withdrawTokens(
+    function _transferTokens(
         address token,
         address to,
         uint256 amount
